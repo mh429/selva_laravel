@@ -14,19 +14,19 @@
       <div class="div_form_inputs">
         <label class="input_wrapper">
           <p>パスワード</p>
-          <input type="text" name="password">    
+          <input type="text" name="password" required class="input_250">    
         </label>
 
         <label class="input_wrapper">
           <p>パスワード（確認）</p>
-          <input type="text" name="password_confirmation">    
+          <input type="text" name="password_confirmation" required class="input_250">    
         </label>
 
         <div class="error_wrapper">
           @if($errors->any())
             <ul style="color:red">
               @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+                <li>※{{ $error }}</li>
               @endforeach
             </ul>
           @endif
