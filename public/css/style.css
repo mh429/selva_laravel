@@ -194,3 +194,6 @@ header input[type="submit"]:hover {
   text-decoration: none;
   color: #0000EE;
 }
+.pass_forget_messages {
+  padding-bottom: 30px;
+}

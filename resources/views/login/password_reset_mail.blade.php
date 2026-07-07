@@ -1,25 +1,44 @@
 <x-layout>
-  <header style="width: 800px; height:100px; background-color: #FBE4D5">
-  </header>
+  <header></header>
 
-  <form action="{{ route('sendPasswordResetMail') }}" method="post" style="margin-top:50px">
-    @csrf
-    <p>パスワード再設定用のURLを記載したメールを送信します。</p>
-    <p>ご登録されたメールアドレスを入力してください。</p>
-    <label>メールアドレス</label>
-    <input type="text" name="email" value="{{ old('email') }}">
+  <div class="contents">
 
-    @if($errors->any())
-      <ul style="color:red">
-        @foreach ($errors->all() as $error)
-          <li>{{ $error }}</li>
-        @endforeach
-      </ul>
-    @endif
+    <div class="wrapper500">
 
-    <input type="submit" value="送信する">
-  </form>  
+      <form action="{{ route('sendPasswordResetMail') }}" method="post" style="margin-top:50px">
+        @csrf
+        <div class="pass_forget_messages">
+          <p>パスワード再設定用のURLを記載したメールを送信します。</p>
+          <p>ご登録されたメールアドレスを入力してください。</p>         
+        </div>
 
-  <a href="/">トップに戻る</a>
-  
+        <div class="div_form_inputs">
+          <label class="input_wrapper">
+            <p>メールアドレス</p>
+            <input type="text" name="email" value="{{ old('email') }}" required class="input_250">
+          </label>
+
+          <div class="error_wrapper">
+              @if($errors->any())
+                <ul style="color:red">
+                  @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                  @endforeach
+                </ul>
+              @endif
+          </div>
+        </div>
+
+        <div class="div_tac">
+          <input type="submit" value="送信する">
+        </div>
+      </form>  
+
+    </div>
+
+    <div class="div_tac">
+      <a href="/" class="white_btn">トップに戻る</a>
+    </div>
+
+  </div>
 </x-layout>

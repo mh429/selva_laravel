@@ -1,29 +1,49 @@
 <x-layout>
-  <header style="width: 800px; height:100px; background-color: #FBE4D5">
-  </header>
+  <header></header>
 
-  <form action="" method="post">
-    @csrf
+  <div class="contents">
 
-    <input type="hidden" name="token" value="{{ $token }}">
-    <input type="hidden" name="email" value="{{ $email }}">
+    <div class="wrapper500">
 
-    <label>パスワード</label>
-    <input type="text" name="password">
-    <label>パスワード（確認）</label>
-    <input type="text" name="password_confirmation">
-    
-    <input type="submit" value="パスワードリセット">
-  </form>
+    <form action="" method="post">
+      @csrf
 
-  @if($errors->any())
-    <ul style="color:red">
-      @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-      @endforeach
-    </ul>
-  @endif
+      <input type="hidden" name="token" value="{{ $token }}">
+      <input type="hidden" name="email" value="{{ $email }}">
 
-  <a href="/">トップに戻る</a>
+      <div class="div_form_inputs">
+        <label class="input_wrapper">
+          <p>パスワード</p>
+          <input type="text" name="password">    
+        </label>
+
+        <label class="input_wrapper">
+          <p>パスワード（確認）</p>
+          <input type="text" name="password_confirmation">    
+        </label>
+
+        <div class="error_wrapper">
+          @if($errors->any())
+            <ul style="color:red">
+              @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+              @endforeach
+            </ul>
+          @endif
+        </div>
+      </div>
+        
+      <div class="div_tac">
+        <input type="submit" value="パスワードリセット">
+      </div>
+    </form>
+
+    </div>
+
+    <div class="div_tac">
+      <a href="/" class="white_btn">トップに戻る</a>
+    </div>
+
+  </div>
 
 </x-layout>
