@@ -1,7 +1,7 @@
 <x-layout>
   <header>
     @auth
-      <p>ようこそ{{ auth()->user()->name_sei }} {{ auth()->user()->name_mei }}様</p>
+      <p>ようこそ {{ auth()->user()->name_sei }} {{ auth()->user()->name_mei }}様</p>
       <div class="header_left">
         <!-- <a href="">商品一覧</a> -->
         <!-- <a href="{{ route('product.create') }}">新規商品登録</a> -->

@@ -26,10 +26,12 @@ class MemberController extends Controller
             'nickname' => ['required', 'string', 'max:10',],
             'gender' => ['required', 'integer', Rule::in(array_keys(config('master.gender')))],
             'password' => ['required', 'string', 'between:8,20', 'regex:/^[a-zA-Z0-9]+$/', 'confirmed',],
+            'password_confirmation' => ['required', 'string', 'between:8,20', 'regex:/^[a-zA-Z0-9]+$/',],
             'email' => ['required', 'string', 'max:200', 'email', 'unique:members,email',],
         ],
         [
             'password.regex' => 'パスワードは半角英数字で入力してください。',
+            'password_confirmation.regex' => 'パスワードは半角英数字で入力してください。',
         ]
         );
 

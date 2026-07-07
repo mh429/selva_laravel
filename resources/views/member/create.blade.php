@@ -74,6 +74,9 @@
             @error('password')
               <p style="color:red">※{{ $message }}</p>
             @enderror
+            @error('password_confirmation')
+              <p style="color:red">※{{ $message }}</p>
+            @enderror
           </div>
 
           <div>
