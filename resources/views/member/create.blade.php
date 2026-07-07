@@ -60,14 +60,14 @@
           <div>
             <label class="input_wrapper">
             <p>パスワード</p>    
-            <input type="text" name="password" required class="input_250">
+            <input type="text" name="password" required class="input_250 mask">
             </label>
           </div>
 
           <div>
             <label class="input_wrapper">
             <p>パスワード確認</p>    
-            <input type="text" name="password_confirmation" required class="input_250">
+            <input type="text" name="password_confirmation" required class="input_250 mask">
             </label>
           </div>
           <div class="error_wrapper">

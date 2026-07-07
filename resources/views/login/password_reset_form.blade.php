@@ -14,12 +14,12 @@
       <div class="div_form_inputs">
         <label class="input_wrapper">
           <p>パスワード</p>
-          <input type="text" name="password" required class="input_250">    
+          <input type="text" name="password" required class="input_250 mask">    
         </label>
 
         <label class="input_wrapper">
           <p>パスワード（確認）</p>
-          <input type="text" name="password_confirmation" required class="input_250">    
+          <input type="text" name="password_confirmation" required class="input_250 mask">    
         </label>
 
         <div class="error_wrapper">

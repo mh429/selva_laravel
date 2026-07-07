@@ -18,7 +18,7 @@
         <div>
           <label class="input_wrapper">
             <p>パスワード</p>
-            <input type="text" name="password" required class="input_250">              
+            <input type="text" name="password" required class="input_250 mask">              
           </label>
         </div>
 

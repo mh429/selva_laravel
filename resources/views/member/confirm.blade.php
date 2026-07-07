@@ -9,7 +9,7 @@
       <table class="confirm_table">
         <tr>
           <th>氏名</th>
-          <td>{{ $data['name_sei']. " ". $data['name_mei'] }}</td>
+          <td>{{ $data['name_sei']. "　". $data['name_mei'] }}</td>
         </tr>
         <tr>
           <th>ニックネーム</th>
