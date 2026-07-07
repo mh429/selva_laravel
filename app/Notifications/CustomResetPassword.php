@@ -47,7 +47,7 @@ class CustomResetPassword extends Notification
         // bladeテンプレートを直接指定（プレーンテキスト）
         return (new MailMessage)
             ->subject('パスワード再設定')
-            ->text('emails.password_reset', [
+            ->view('emails.password_reset', [
                 'url' => $url
             ]);
     }

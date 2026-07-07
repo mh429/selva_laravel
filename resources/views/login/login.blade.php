@@ -28,7 +28,7 @@
 
         <div class="error_wrapper">
           @if($errors->any())
-            <p style="color: red">{{ $errors->first() }}</p>
+            <p style="color: red">※{{ $errors->first() }}</p>
           @endif
         </div>
 

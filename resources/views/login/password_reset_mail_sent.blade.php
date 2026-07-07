@@ -5,7 +5,7 @@
 
     <div class="wrapper500">
 
-      <div class="pass_forget_messages">
+      <div class="pass_forget_messages div_tac">
         <p>パスワード再設定の案内メールを送信しました。</p>
         <p>（まだパスワード再設定は完了しておりません）</p>
         <p>届きましたメールに記載されている</p>
