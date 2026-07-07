@@ -7,9 +7,11 @@
 <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
+    <div class="slot_wrapper">
 
-    {{ $slot }}
-    
+        {{ $slot }}
+        
+    </div>
     <script src="{{ asset('js/script.js') }}"></script>
 </body>
 </html>

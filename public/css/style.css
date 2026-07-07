@@ -1,3 +1,67 @@
-/* h1 {
-  color: red;
-} */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.slot_wrapper {
+  width: 800px;
+  min-height: 500px;
+  margin: 50px auto;
+  background-color: #FEF2CB;
+}
+.contents {
+  padding: 20px;
+}
+.wrapper500 {
+  width: 500px;
+  margin: 20px auto;
+}
+.div_tac {
+  text-align: center;
+}
+
+
+h1 {
+  text-align: center;
+  font-size: 26px;
+}
+input[type="submit"] {
+  width: 170px;
+  padding: 5px 20px;
+  background-color: #EE7D31;
+  color: #fff;
+  text-align: center;
+  border: #d17639 1px solid;
+  border-radius: 5px;
+}
+input[type="submit"]:hover {
+  background-color: #d17639;
+  cursor: pointer;
+}
+
+
+
+/* 会員登録 */
+.names_input_wrapper {
+  padding-bottom: 15px;
+  display: flex;
+  gap: 30px;
+}
+.name_input_wrapper {
+  display: flex;
+  gap: 15px;
+}
+.gender_input_wrapper {
+  padding-bottom: 15px;
+  display: flex;
+  gap: 30px;
+}
+.input_wrapper {
+  padding-bottom: 15px;
+  display: flex;
+  gap: 30px;
+}
+.input_wrapper p {
+  width: 120px;
+}
