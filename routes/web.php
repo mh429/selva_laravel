@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
-
+use App\Http\Controllers\ReviewController;
 
 /**
  * トップ画面
@@ -71,5 +71,32 @@ Route::middleware('auth')->group(function () {
 
     Route::post('product/store', [ProductController::class, 'store'])
     ->name('product.store');
+
+});
+
+Route::get('product', [ProductController::class, 'index'])
+->name('product.index');
+
+Route::get('product/show/{product}', [ProductController::class, 'show'])
+->name('product.show');
+
+Route::get('product/showreviews/{product}', [ProductController::class, 'showReviews'])
+->name('product.showreviews');
+
+
+/**
+ * レビュー登録
+ */
+
+Route::middleware('auth')->group(function () {
+
+    Route::get('review/create/{product}', [ReviewController::class, 'create'])
+    ->name('review.create');
+
+    Route::post('review/confirm/{product}', [ReviewController::class, 'confirm'])
+    ->name('review.confirm');
+
+    Route::post('review/store/{product}', [ReviewController::class, 'store'])
+    ->name('review.store');
 
 });

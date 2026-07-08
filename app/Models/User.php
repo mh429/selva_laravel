@@ -7,11 +7,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Notifications\CustomResetPassword;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
+
+    // Laravelの標準機能（SoftDeletes）
+    use SoftDeletes;
 
     // テーブル名をmembersにしたので追記
     protected $table = 'members';
@@ -83,7 +87,12 @@ class User extends Authenticatable
     // リレーション
     public function products()
     {
-        return $this->hasMany(Product::class);
+        return $this->hasMany(Product::class, 'member_id');
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class, 'member_id');
     }
 
 }
