@@ -53,16 +53,22 @@ class ProductController extends Controller
     // 登録内容確認画面
     public function confirm(Request $request)
     {
-        $data = $request->validate([
-            'name' => ['required', 'string', 'max:100'],
-            'product_category_id' => ['required', 'integer', 'exists:product_categories,id'],
-            'product_subcategory_id' => ['required', 'integer', 'exists:product_subcategories,id'],
-            'image_1' => ['nullable', 'string'],
-            'image_2' => ['nullable', 'string'],
-            'image_3' => ['nullable', 'string'],
-            'image_4' => ['nullable', 'string'],
-            'product_content' => ['required', 'string', 'max:500'],
-        ]);
+        $data = $request->validate(
+            [
+                'name' => ['required', 'string', 'max:100'],
+                'product_category_id' => ['required', 'integer', 'exists:product_categories,id'],
+                'product_subcategory_id' => ['required', 'integer', 'exists:product_subcategories,id'],
+                'image_1' => ['nullable', 'string'],
+                'image_2' => ['nullable', 'string'],
+                'image_3' => ['nullable', 'string'],
+                'image_4' => ['nullable', 'string'],
+                'product_content' => ['required', 'string', 'max:500'],
+            ],
+            [],
+            [
+                'name' => '商品名',
+            ]
+        );
 
         session()->put('product', $data);
 

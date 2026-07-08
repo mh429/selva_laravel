@@ -163,5 +163,12 @@ return [
         'password' => 'パスワード',
         'password_confirmation' => 'パスワード確認',
         'email' => 'メールアドレス',
+        'product_content' => '商品説明',
+        'product_category_id' => '商品大カテゴリ',
+        'product_subcategory_id' => '商品小カテゴリ',
+        'image_1' => '写真1',
+        'image_1' => '写真2',
+        'image_1' => '写真3',
+        'image_1' => '写真4',
     ],
 ];

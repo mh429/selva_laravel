@@ -9,7 +9,7 @@ if (category && subcategory) {
  
   async function loadSubcategories(categoryId, selectedId = '') {
     
-    subcategory.innerHTML = '<option value="">選択してください</option>';
+    subcategory.innerHTML = '<option value="">---商品小カテゴリ---</option>';
 
     if (!categoryId) {
       subcategory.style.display = 'none';
