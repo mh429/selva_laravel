@@ -34,7 +34,7 @@
       </div>
         
       <div class="div_tac">
-        <input type="submit" value="パスワードリセット">
+        <input type="submit" value="パスワードリセット" onclick="this.disabled=true; this.form.submit();">
       </div>
     </form>
 

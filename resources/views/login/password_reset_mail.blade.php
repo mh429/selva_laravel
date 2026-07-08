@@ -30,7 +30,7 @@
         </div>
 
         <div class="div_tac">
-          <input type="submit" value="送信する">
+          <input type="submit" value="送信する" onclick="this.disabled=true; this.form.submit();">
         </div>
       </form>  
 
