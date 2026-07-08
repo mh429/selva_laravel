@@ -112,7 +112,7 @@ class LoginController extends Controller
                 'email.required' => 'ユーザーが存在しません。',
                 'token.required' => 'トークンが無効です。',
                 'password.regex' => 'パスワードは半角英数字で入力してください。',
-                'password_confirmation.regex' => 'パスワードは半角英数字で入力してください。',
+                'password_confirmation.regex' => 'パスワード確認は半角英数字で入力してください。',
             ]
         );
 

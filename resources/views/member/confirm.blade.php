@@ -32,7 +32,7 @@
       <form action="{{ route('member.store') }}" method="POST">
         @csrf
         <div class="div_tac">
-          <input type="submit" value="登録完了">
+          <input type="submit" value="登録完了" onclick="this.disabled=true; this.form.submit();">
         </div>
       </form>
 

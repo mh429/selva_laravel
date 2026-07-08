@@ -31,7 +31,7 @@ class MemberController extends Controller
         ],
         [
             'password.regex' => 'パスワードは半角英数字で入力してください。',
-            'password_confirmation.regex' => 'パスワードは半角英数字で入力してください。',
+            'password_confirmation.regex' => 'パスワード確認は半角英数字で入力してください。',
         ]
         );
 
@@ -46,11 +46,10 @@ class MemberController extends Controller
         if (!$data) {
             return redirect()->route('member.create');
         }
+        session()->forget('member');
 
         $data['password'] = bcrypt($data['password']);
         User::create($data);
-        
-        session()->forget('member');
 
         Mail::to($data['email'])->send(new MemberCreateMail($data));
 
