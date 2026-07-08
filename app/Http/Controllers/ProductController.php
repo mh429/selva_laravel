@@ -32,13 +32,18 @@ class ProductController extends Controller
     // 画像アップロード
     public function upload(Request $request)
     {
-        $request->validate([
+        $request->validate(
+        [
             'imageInput' => [
                 'required',
                 'image',
                 'mimes:jpg,jpeg,png,gif',
                 'max:10240',
             ],
+        ],
+        [],
+        [
+            'imageInput' => '商品写真',
         ]);
 
         // ファイルを保存してパスを取得
@@ -85,7 +90,8 @@ class ProductController extends Controller
         if (!$data) {
             return redirect()->route('product.create');
         }
- 
+        session()->forget('product'); 
+
         Product::create([
             'member_id' => Auth::id(),
             'name' => $data['name'],
@@ -97,8 +103,6 @@ class ProductController extends Controller
             'image_4' => $data['image_4'] ?? null,
             'product_content' => $data['product_content'],
         ]);
- 
-        session()->forget('product');
  
         return redirect()->route('top');
     }

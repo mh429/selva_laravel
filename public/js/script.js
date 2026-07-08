@@ -42,51 +42,19 @@ if (category && subcategory) {
   });
 }
 
-// const category = document.getElementById('category');
-// const subcategory = document.getElementById('subcategory');
- 
-// if (category && subcategory) {
- 
-//   async function loadSubcategories(categoryId, selectedId = '') {
-//     subcategory.innerHTML = '<option value="">選択してください</option>';
- 
-//     if (!categoryId) {
-//       return;
-//     }
- 
-//     const response = await fetch(`/product/subcategories/${categoryId}`);
-//     const data = await response.json();
- 
-//     data.forEach(item => {
-//       const isSelected = String(item.id) === String(selectedId);
-//       subcategory.insertAdjacentHTML(
-//         'beforeend',
-//         `<option value="${item.id}"${isSelected ? ' selected' : ''}>${item.name}</option>`
-//       );
-//     });
-//   }
- 
-//   // 確認画面から「戻る」で戻ってきた時など、大カテゴリが選択済みなら
-//   // サブカテゴリもAjaxで取得して選択状態を復元する
-//   if (category.value) {
-//     loadSubcategories(category.value, subcategory.dataset.selected);
-//   }
- 
-//   // 大カテゴリを変更したらサブカテゴリを再取得（選択はリセット）
-//   category.addEventListener('change', function () {
-//     loadSubcategories(this.value);
-//   });
-// }
-
 
 /**
  * 商品画像登録
  */
 
+// const imageError = document.getElementById('image_error');
+
 for (let i = 1; i <= 4; i ++) {
+  
   const imageInput = document.getElementById(`image_input_${i}`);
   const imagePath = document.getElementById(`image_${i}`);
   const preview = document.getElementById(`preview${i}`);
+  const imageError = document.getElementById(`image_error${i}`);
 
   if (imageInput && imagePath && preview) {
     // 戻ってきた時、hiddenがあればプレビュー表示    
@@ -108,9 +76,11 @@ for (let i = 1; i <= 4; i ++) {
       // 10MBまで
       if (file.size > 10 * 1024 * 1024) {
         alert('画像は10MB以下にしてください。');
+        // PHPの上限が10MBなので、バリデーションエラーメッセージが表示されない
+        imageError.textContent = '※商品写真は10MB以下にしてください。';
         this.value = '';
         return;
-      }
+      }      
       // jpg jpeg png gifのみ
       const allowTypes = [
         'image/jpeg',
@@ -122,6 +92,10 @@ for (let i = 1; i <= 4; i ++) {
         this.value = '';
         return;
       }
+
+      // // コンソールに画像サイズを表示
+      // console.log(file.size);
+      // console.log(file.size / 1024 / 1024);
 
       // フォームデータ作成
       const formData = new FormData();
@@ -135,11 +109,15 @@ for (let i = 1; i <= 4; i ++) {
         method: 'POST',
         headers: {
             'X-CSRF-TOKEN': token,
+            'Accept': 'application/json',   // エラーメッセージ受取り
         },
         body: formData,
       });
       if (!response.ok) {
-        alert('画像のアップロードに失敗しました。');
+        // エラーメッセージをブレードに表示
+        const error = await response.json();
+        imageError.textContent = '※' + error.errors.imageInput[0];
+        // console.log(error);
         return;
       }
       // 返り値をJSON変換して変数に保存

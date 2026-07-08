@@ -55,19 +55,17 @@
                   <p>写真{{ $i }}</p>
                   <img id="preview{{ $i }}" style="display:none; max-width:200px;">          
                   <input type="file" id="image_input_{{ $i }}" name="image_input_{{ $i }}" accept=".jpg, .jpeg, .png, .gif" class="file_button_none">
-                  <label for="image_input_{{ $i }}">
-                    <button class="file_button">アップロード</button>
+                  <label for="image_input_{{ $i }}" class="file_button">
+                    アップロード
                   </label>
                   <input
                     type="hidden" id="image_{{ $i }}" name="image_{{ $i }}"
                     value="{{ old('image_'.$i, $product['image_'.$i] ?? '') }}"
                     data-url="{{ old('image_'.$i, $product['image_'.$i] ?? '') ? asset('storage/' . old('image_'.$i, $product['image_'.$i] ?? '')) : '' }}">
-                  <div class="error_wrapper_td">
-                    @error('image_'.$i)
-                      <p>※{{ $message }}</p>
-                    @enderror                       
-                  </div>
                 </div>
+                <div class="error_wrapper_td">
+                  <p id="image_error{{ $i }}"></p>               
+                </div>                       
               @endfor            
             </td>
           </tr>
