@@ -89,10 +89,15 @@
       </form>
     </div>
 
+  @if(session('product_create_from') === 'top')
     <div class="div_tac">
-      <a href="/" class="white_btn">トップに戻る</a>
+      <a href="{{ route('top') }}" class="white_btn">トップに戻る</a>
     </div>
+  @else
+    <div class="div_tac">
+      <a href="{{ route('product.index') }}" class="white_btn">商品一覧に戻る</a>
+    </div>
+  @endif
 
   </div>
-
 </x-layout>

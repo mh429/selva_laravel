@@ -59,7 +59,7 @@
         <div>
           <p><span class="procudt_categories_index">{{ $product->category->name }}>{{ $product->subcategory->name }}</span></p>
           <p class="product_title_index"><a href="{{ route('product.show', $product) }}">{{ $product->name }}</a></p>
-          <div>
+          <div class="review_total">
             @if ($product->reviews_avg_evaluation)
               <div>
                 @for ($i = 0; $i < ceil($product->reviews_avg_evaluation); $i++)

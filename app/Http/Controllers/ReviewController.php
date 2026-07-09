@@ -24,6 +24,10 @@ class ReviewController extends Controller
         $data = $request->validate([
             'evaluation' => ['required', 'integer', 'between:1,5'],
             'comment' => ['required', 'string', 'max:500',],
+        ],
+        [],
+        [
+            'comment' => '商品コメント',
         ]);
 
         session()->put("review.{$product->id}", $data);
@@ -40,15 +44,14 @@ class ReviewController extends Controller
         if (!$data) {
             return redirect()->route('top');
         }
- 
+        session()->forget("review.{$product->id}");
+
         Review::create([
             'member_id' => Auth::id(),
             'product_id' => $product->id,
             'evaluation' => $data['evaluation'],
             'comment' => $data['comment'],
         ]);
- 
-        session()->forget("review.{$product->id}");
  
         return view('review.store', compact('product'));
     }

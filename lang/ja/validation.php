@@ -167,8 +167,9 @@ return [
         'product_category_id' => '商品大カテゴリ',
         'product_subcategory_id' => '商品小カテゴリ',
         'image_1' => '写真1',
-        'image_1' => '写真2',
-        'image_1' => '写真3',
-        'image_1' => '写真4',
+        'image_2' => '写真2',
+        'image_3' => '写真3',
+        'image_4' => '写真4',
+        'evaluation' => '商品評価',
     ],
 ];

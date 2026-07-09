@@ -11,8 +11,12 @@ use Illuminate\Support\Facades\Auth;
 class ProductController extends Controller
 {
     // 商品登録画面を表示
-    public function create()
+    public function create(Request $request)
     {
+        if ($request->filled('from')) {
+            session(['product_create_from' => $request->from]);
+        }
+
         $product = session('product');
         $categories = ProductCategory::select('id', 'name')->get();
 
@@ -110,9 +114,6 @@ class ProductController extends Controller
     // 商品一覧表示
     public function index(Request $request)
     {
-        // リレーションも取得
-        // $products = Product::with(['category', 'subcategory'])->get();
-
         $query = Product::with(['category', 'subcategory'])
             ->withAvg('reviews', 'evaluation');
 
@@ -172,7 +173,7 @@ class ProductController extends Controller
         $reviews = $product->reviews()
             ->with('user')
             ->latest()
-            ->paginate(6);
+            ->paginate(5);
 
         return view('product.showreviews', compact('product', 'average', 'reviews'));
     }
