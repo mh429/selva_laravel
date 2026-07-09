@@ -25,7 +25,7 @@
             <td>
               <div class="categories_wrapper">
                 <select id="category" name="product_category_id" required>
-                  <option value="">---商品大カテゴリ---</option>
+                  <option value="">---カテゴリ---</option>
                   @foreach ($categories as $category)
                     <option value="{{ $category->id }}" @selected(old('product_category_id', $product['product_category_id'] ?? '') == $category->id)>
                       {{ $category->name }}

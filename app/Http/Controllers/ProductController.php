@@ -108,7 +108,7 @@ class ProductController extends Controller
             'product_content' => $data['product_content'],
         ]);
  
-        return redirect()->route('top');
+        return redirect()->route('product.index');
     }
 
     // 商品一覧表示
@@ -117,14 +117,14 @@ class ProductController extends Controller
         $query = Product::with(['category', 'subcategory'])
             ->withAvg('reviews', 'evaluation');
 
-        // 大カテゴリ
-        if ($request->filled('product_category_id')) {
-            $query->where('product_category_id', $request->product_category_id);
-        }
-
         // 小カテゴリ
         if ($request->filled('product_subcategory_id')) {
             $query->where('product_subcategory_id', $request->product_subcategory_id);
+        } else {
+            // 大カテゴリ
+            if ($request->filled('product_category_id')) {
+                $query->where('product_category_id', $request->product_category_id);
+            }            
         }
 
         // フリーワード
@@ -135,7 +135,7 @@ class ProductController extends Controller
             });
         }
 
-        $products = $query->paginate(10)->withQueryString();
+        $products = $query->latest('id')->paginate(10)->withQueryString();
 
         // 検索条件をビューへ渡す
         $product_search = $request->only([

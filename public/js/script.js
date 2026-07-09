@@ -9,7 +9,7 @@ if (category && subcategory) {
  
   async function loadSubcategories(categoryId, selectedId = '') {
     
-    subcategory.innerHTML = '<option value="">---商品小カテゴリ---</option>';
+    subcategory.innerHTML = '<option value="">---サブカテゴリ---</option>';
 
     if (!categoryId) {
       subcategory.style.display = 'none';
@@ -89,6 +89,8 @@ for (let i = 1; i <= 4; i ++) {
       ];
       if (!allowTypes.includes(file.type)) {
         alert('jpg・jpeg・png・gifのみアップロードできます。');
+        // バリデーションに飛ぶ前にreturnされるので
+        imageError.textContent = '※商品写真には、以下のファイルタイプを指定してください。jpg, jpeg, png, gif';
         this.value = '';
         return;
       }
@@ -122,6 +124,9 @@ for (let i = 1; i <= 4; i ++) {
       }
       // 返り値をJSON変換して変数に保存
       const data = await response.json();
+
+      // エラーメッセージを消去
+      imageError.textContent = '';
 
       // hiddenへ保存（パスと表示用URLの両方）
       imagePath.value = data.path;

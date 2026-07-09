@@ -21,7 +21,7 @@
             <td>
               <div class="categories_wrapper">
                 <select id="category" name="product_category_id">
-                  <option value="">選択してください</option>
+                  <option value="">---カテゴリ---</option>
                   @foreach ($categories as $category)
                     <option value="{{ $category->id }}" @selected(($product_search['product_category_id'] ?? '') == $category->id)>
                       {{ $category->name }}

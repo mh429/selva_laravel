@@ -8,7 +8,7 @@
 
 <div class="contents">
 
-  <div class="wrapper500">
+  <div class="wrapper550">
 
     <div class="review_product_infomations">
       <div>
@@ -51,7 +51,7 @@
             <p class="bold">商品コメント</p>
           </th>
           <td>
-            <p>{{ $data['comment'] }}</p>
+            <p>{!! nl2br(e($data['comment'])) !!}</p>
           </td>
         </tr>
       </table>

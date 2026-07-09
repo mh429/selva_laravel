@@ -8,7 +8,7 @@
 
 <div class="contents">
 
-  <div class="wrapper500">
+  <div class="wrapper550">
 
     <div class="review_product_infomations">
       <div>

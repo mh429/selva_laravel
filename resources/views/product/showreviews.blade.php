@@ -10,7 +10,7 @@
 
 <div class="contents">
 
-  <div class="wrapper500">
+  <div class="wrapper550">
 
     <div class="review_product_infomations">
       <div>
@@ -50,7 +50,7 @@
         </div>
         <div class="review_flex">
           <p class="review_left">商品コメント</p>
-          <p>{!! nl2br(e($review->comment)) !!}</p>
+          <p class="review_comment">{!! nl2br(e($review->comment)) !!}</p>
         </div>
       </div>
     @endforeach
