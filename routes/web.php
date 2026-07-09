@@ -62,8 +62,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('product/create', [ProductController::class, 'create'])
     ->name('product.create');
-    // サブカテゴリと画像用のルート（Ajax）
-    Route::get('/product/subcategories/{category}',[ProductController::class, 'getSubcategories']);
+    // 画像用アップロード用のルート（Ajax）
     Route::post('/product/upload', [ProductController::class, 'upload']);
 
     Route::post('product/confirm', [ProductController::class, 'confirm'])
@@ -82,6 +81,9 @@ Route::get('product/show/{product}', [ProductController::class, 'show'])
 
 Route::get('product/showreviews/{product}', [ProductController::class, 'showReviews'])
 ->name('product.showreviews');
+
+// サブカテゴリ表示用のルート（Ajax）
+Route::get('/product/subcategories/{category}',[ProductController::class, 'getSubcategories']);
 
 
 /**

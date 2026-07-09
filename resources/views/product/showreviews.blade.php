@@ -1,11 +1,9 @@
 <x-layout>
 <header style="width: 800px; height:100px; background-color: #FBE4D5">
   <h1>商品レビュー一覧</h1>
-  @auth
     <div>
       <a href="/">トップに戻る</a>        
     </div>
-  @endauth
 </header>
 
 <div class="contents">
