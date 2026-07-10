@@ -23,7 +23,7 @@
         @csrf
         @method('patch')
         <div class="div_tac">
-          <input type="submit" value="変更完了">
+          <input type="submit" value="変更完了" onclick="this.disabled=true; this.form.submit();">
         </div>
       </form>
 

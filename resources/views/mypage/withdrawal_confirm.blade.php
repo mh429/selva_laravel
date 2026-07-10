@@ -1,5 +1,5 @@
 <x-layout>
-<header style="width: 800px; height:100px; background-color: #FBE4D5">
+<header>
   <div>
     <h1>マイページ</h1>
   </div>
@@ -23,7 +23,7 @@
     
     <form action="{{ route('mypage.withdrawal') }}" method="post">
       @csrf
-      <input type="submit" value="退会する" class="blue_submit">
+      <input type="submit" value="退会する" class="blue_submit" onclick="this.disabled=true; this.form.submit();">
     </form>
   </div>
 

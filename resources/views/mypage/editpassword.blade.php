@@ -29,7 +29,7 @@
       </div>
       
       <div class="div_tac">
-        <input type="submit" value="パスワードを変更">
+        <input type="submit" value="パスワードを変更" onclick="this.disabled=true; this.form.submit();">
       </div>
     </form>
 

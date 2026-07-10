@@ -1,5 +1,5 @@
 <x-layout>
-<header style="width: 800px; height:100px; background-color: #FBE4D5">
+<header>
   <div>
     <h1>マイページ</h1>
   </div>
@@ -7,7 +7,7 @@
     <a href="/">トップに戻る</a>
     <form action="{{ route('logout') }}" method="POST">
       @csrf
-      <input type="submit" value="ログアウト">
+      <input type="submit" value="ログアウト" onclick="this.disabled=true; this.form.submit();">
     </form>           
   </div>
 </header>

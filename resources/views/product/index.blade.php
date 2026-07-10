@@ -1,5 +1,5 @@
 <x-layout>
-<header style="width: 800px; height:100px; background-color: #FBE4D5">
+<header>
   <h1>商品一覧</h1>
   @auth
     <div>

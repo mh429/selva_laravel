@@ -83,6 +83,7 @@ class MypageController extends Controller
         if (!$data) {
             return redirect()->route('top');
         }
+        session()->forget('member.editing');        
  
         $member = Auth::user();
         $member->update([
@@ -91,8 +92,6 @@ class MypageController extends Controller
             'nickname' => $data['nickname'],
             'gender' => $data['gender'],
         ]);
- 
-        session()->forget('member.editing');
  
         return to_route('mypage');
     }
@@ -197,6 +196,7 @@ class MypageController extends Controller
                 'product.category',
                 'product.subcategory',
             ])
+            ->latest('id')
             ->paginate(5);
 
         return view('mypage.review.index', compact('reviews'));
@@ -236,10 +236,9 @@ class MypageController extends Controller
         if (!$data) {
             return redirect()->route('top');
         }
+        session()->forget("reviewedit.{$review->id}");        
  
         $review->update($data);
- 
-        session()->forget("reviewedit.{$review->id}");
  
         return to_route('mypage.review');
     }

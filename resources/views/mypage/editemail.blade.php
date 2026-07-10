@@ -26,7 +26,7 @@
       </div>
 
       <div class="div_tac">
-        <input type="submit" value="認証メール送信">
+        <input type="submit" value="認証メール送信" onclick="this.disabled=true; this.form.submit();">
       </div>
       
     </form>    

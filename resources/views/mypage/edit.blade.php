@@ -1,6 +1,6 @@
 <x-layout>
 <div class="contents">
-  <h1>会員情報登録</h1>
+  <h1>会員情報変更</h1>
 
   <div class="wrapper500">
 

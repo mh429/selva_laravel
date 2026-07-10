@@ -518,6 +518,31 @@ input[type="submit"].search_btn:hover {
 .edit_email p {
   width: 200px;
 }
+.mypage_review_product_title {
+  font-size: 18px;
+  font-weight: normal;
+  color: #0000EE;
+}
+.mypage_editdelete_btn {
+  display: inline-block;
+  height: 30px;
+  padding: 5px 8px;
+  margin-right: 5px;
+  font-size: 14px;
+  background-color: #2F5598;
+  color: #fff;
+  text-align: center;
+  border: #254986 1px solid;
+  border-radius: 5px;  
+  text-decoration: none;
+}
+.mypage_editdelete_btn:hover {
+  background-color: #254986;
+  cursor: pointer;
+}
+
+
+
 
 /* ページャー */
 .pager_prev_back,

@@ -27,7 +27,7 @@
       </div>
 
       <div class="div_tac">
-        <input type="submit" value="認証コードを送信してメールアドレスの変更を完了する" class="submit_fit">
+        <input type="submit" value="認証コードを送信してメールアドレスの変更を完了する" class="submit_fit" onclick="this.disabled=true; this.form.submit();">
       </div>
 
     </form>    

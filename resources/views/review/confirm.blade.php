@@ -1,5 +1,5 @@
 <x-layout>
-<header style="width: 800px; height:100px; background-color: #FBE4D5">
+<header>
   <h1>商品レビュー登録確認</h1>
   <div>
     <a href="/">トップに戻る</a>        
