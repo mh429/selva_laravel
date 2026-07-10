@@ -69,6 +69,9 @@ h1 {
 .pb_20 {
   padding-bottom: 20px;
 }
+.pb_40 {
+  padding-bottom: 40px;
+}
 .bold {
   font-weight: bold;
 }
@@ -107,6 +110,11 @@ input[type="submit"].blue_submit {
 input[type="submit"].blue_submit:hover {
   background-color: #254986;
   cursor: pointer;
+}
+input[type="submit"].submit_fit {
+  width: auto;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .input_250 {
   width: 250px;
@@ -501,6 +509,15 @@ input[type="submit"].search_btn:hover {
 }
 
 
+/* マイページ */
+.edit_email {
+  padding-bottom: 15px;
+  display: flex;
+  gap: 30px;
+}
+.edit_email p {
+  width: 200px;
+}
 
 /* ページャー */
 .pager_prev_back,
