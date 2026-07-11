@@ -155,6 +155,9 @@ Route::middleware('auth')->group(function () {
     Route::post('mypage/editemailsendcode', [MypageController::class, 'editEmailSendcode'])
     ->name('mypage.editemail.sendcode');
 
+    Route::get('mypage/editemail/inputcode', [MypageController::class, 'showEditEmailInputCode'])
+    ->name('mypage.editemail.inputcode');
+
     Route::patch('mypage/updateemail', [MypageController::class, 'updateEmail'])
     ->name('mypage.updateemail');
 

@@ -111,9 +111,11 @@ class MypageController extends Controller
         $data = $request->validate(
         [
             'password' => ['required', 'string', 'between:8,20', 'regex:/^[a-zA-Z0-9]+$/', 'confirmed',],
+            'password_confirmation' => ['required', 'string', 'between:8,20', 'regex:/^[a-zA-Z0-9]+$/',],
         ],
         [
             'password.regex' => 'パスワードは半角英数字で入力してください。',
+            'password_confirmation.regex' => 'パスワード確認は半角英数字で入力してください。',
         ]
         );
 
@@ -160,10 +162,22 @@ class MypageController extends Controller
 
         Mail::to($data['email'])->send(new MypageEmailUpdateMail($auth_code));
 
+        return redirect()->route('mypage.editemail.inputcode');
+    }
+
+    // 認証コード入力画面を表示
+    // back用にgetルートにする（Varidationを自作してpostのままにする方法もある）
+    public function showEditEmailInputCode()
+    {
+        if (!session()->has('member.editingemail')) {
+            return to_route('mypage.editemail');
+        }
+
         return view('mypage.editemail_inputcode');
     }
+
     // DB登録
-     public function updateEmail(Request $request)
+    public function updateEmail(Request $request)
     {
         // 認証コード確認
         $member = Auth::user();
@@ -215,9 +229,14 @@ class MypageController extends Controller
     // レビュー編集確認
     public function reviewEditConfirm(Review $review, Request $request)
     {
-        $data = $request->validate([
+        $data = $request->validate(
+        [
             'evaluation' => ['required', 'integer', 'between:1,5'],
             'comment' => ['required', 'string', 'max:500',],
+        ],
+        [],
+        [
+            'comment' => '商品コメント',
         ]);
 
         session()->put("reviewedit.{$review->id}", $data);
