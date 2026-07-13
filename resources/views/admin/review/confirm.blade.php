@@ -1,16 +1,15 @@
 <x-admin_layout>
+<header  class="header_admin">
+  <h1>{{ $mode === 'create' ? '商品レビュー登録確認' : '商品レビュー編集確認' }}</h1>
 
-  <header style="width: 800px; height:100px; background-color: #D0CECE">
-    <h1>{{ $mode === 'create' ? '商品レビュー登録確認' : '商品レビュー編集確認' }}</h1>
+  <div>
+    <a href="{{ session('admin_review_index_url', route('admin.review.index')) }}">一覧へ戻る</a>  
+  </div>
+</header>
 
-    <div>
-      <a href="{{ session('admin_review_index_url', route('admin.review.index')) }}">一覧へ戻る</a>  
-    </div>
-  </header>
+<div class="contents">
 
-  <div class="contents">
-
-    <div class="wrapper500">
+  <div class="wrapper500">
 
     <div class="review_product_infomations">
       <div>
@@ -19,16 +18,16 @@
         @endif
       </div>
       <div>
-        <div>
+        <div class="review_total pb_10">
           <p>商品ID</p>
           <p>{{ $product->id }}</p>
         </div>
-        <div>
+        <div class="review_total pb_20">
           <p>会員</p>
           <p>{{ $user->name_sei }} {{ $user->name_mei }}</p>
         </div>
-        <h2 class="pb_20">{{ $product->name }}</h2>
-        <div class="review_total">
+        <p class="pb_20">{{ $product->name }}</p>
+        <div class="review_total pb_20">
           <p>総合評価</p>
           @if ($average)
             <div>
@@ -46,49 +45,48 @@
 
     <hr>
 
-      <table class="confirm_table">
-        <tr>
-          <th>ID</th>
-          <td>{{ $mode === 'create' ? '登録後に自動採番' : $review->id }}</td>
-        </tr>
-        <tr>
-          <th>商品評価</th>
-          <td>{{ $data['evaluation'] }}</td>
-        </tr>
-        <tr>
-          <th>商品コメント</th>
-          <td>{{ $data['comment'] }}</td>
-        </tr>
-      </table>
+    <table class="confirm_table">
+      <tr>
+        <th>ID</th>
+        <td>{{ $mode === 'create' ? '登録後に自動採番' : $review->id }}</td>
+      </tr>
+      <tr>
+        <th>商品評価</th>
+        <td>{{ $data['evaluation'] }}</td>
+      </tr>
+      <tr>
+        <th>商品コメント</th>
+        <td>{{ $data['comment'] }}</td>
+      </tr>
+    </table>
 
-      @if ($mode === 'create')
-      <form action="{{ route('admin.review.store') }}" method="POST">
-        @csrf
-        <div class="div_tac">
-          <input type="submit" value="登録完了">
-        </div>
-      </form>
+    @if ($mode === 'create')
+    <form action="{{ route('admin.review.store') }}" method="POST">
+      @csrf
+      <div class="div_tac">
+        <input type="submit" value="登録完了" class="blue_submit" onclick="this.disabled=true; this.form.submit();">
+      </div>
+    </form>
 
-      @else
-      <form action="{{ route('admin.review.update', $review->id) }}" method="post">
-        @csrf
-        @method('patch')
-        <div class="div_tac">
-          <input type="submit" value="編集完了">
-        </div>
-      </form>
-      @endif
+    @else
+    <form action="{{ route('admin.review.update', $review->id) }}" method="post">
+      @csrf
+      @method('patch')
+      <div class="div_tac">
+        <input type="submit" value="編集完了" class="blue_submit" onclick="this.disabled=true; this.form.submit();">
+      </div>
+    </form>
+    @endif
 
-    </div>
-
-    <div class="div_tac">
-      
-      @if ($mode === 'create')
-        <a href="{{ route('admin.review.create') }}" class="white_btn">前に戻る</a>
-      @else
-        <a href="{{ route('admin.review.edit', $review->id) }}" class="white_btn">前に戻る</a>
-      @endif
-    </div>
   </div>
+
+  <div class="div_tac">
+    @if ($mode === 'create')
+      <a href="{{ route('admin.review.create') }}" class="white_blue_btn">前に戻る</a>
+    @else
+      <a href="{{ route('admin.review.edit', $review->id) }}" class="white_blue_btn">前に戻る</a>
+    @endif
+  </div>
+</div>
 
 </x-admin_layout>

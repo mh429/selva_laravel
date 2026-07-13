@@ -48,7 +48,7 @@
       <form action="{{ route('admin.member.destroy', $user->id) }}" method="post">
         @csrf
         @method('delete')
-        <input type="submit" value="削除" class="white_blue_submit">
+        <input type="submit" value="削除" class="white_blue_submit" onclick="this.disabled=true; this.form.submit();">
       </form>
     </div>
 

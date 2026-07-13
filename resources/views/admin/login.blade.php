@@ -34,7 +34,7 @@
       </div>
 
       <div class="div_tac">
-        <input type="submit" value="ログイン" class="blue_submit">
+        <input type="submit" value="ログイン" class="blue_submit" onclick="this.disabled=true; this.form.submit();">
       </div>
 
     </form>

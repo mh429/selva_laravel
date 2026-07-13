@@ -63,6 +63,7 @@
 .categories_wrapper {
   display: flex;
   gap: 10px;
+  width: 300px;
 }
 
 /* 共通（パーツ系） */
@@ -319,11 +320,12 @@ header input[type="submit"]:hover {
 }
 /* 会員登録確認画面 */
 .confirm_table {
-  width: 480px;
+  width: 100%;
   padding-top: 10px;
   padding-bottom: 20px;
 }
-.confirm_table td,th {
+.confirm_table td,
+.confirm_table th {
   padding: 15px;
   vertical-align: top;
 }
@@ -406,7 +408,8 @@ input[type="submit"].search_btn:hover {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-.search_table td,th {
+.search_table td,
+.search_table th {
   padding: 10px;
   vertical-align: top;
 }
@@ -533,7 +536,8 @@ input[type="submit"].search_btn:hover {
   padding-bottom: 20px;
   margin: 0 auto;
 }
-.mini_table td,th {
+.mini_table td,
+.mini_table th {
   padding: 15px;
   vertical-align: top;
 }
@@ -689,6 +693,58 @@ input[type="submit"].search_btn:hover {
   align-items: center;
 }
 
+/* カテゴリ管理 */
+.category_input_table {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+.category_input_table td,
+.category_input_table th {
+  padding: 15px;
+  vertical-align: top;
+}
+.category_input_table th {
+  width: 150px;
+  font-weight: normal;
+  text-align: left;
+}
+.category_input_table td {
+  word-break: break-all;
+  width: 255px;
+}
+
+/* 商品管理 */
+.admin_product_detail_average {
+  width: 800px;
+  height:80px; 
+  background-color: #D0CECE;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  display: flex;
+  align-items: center;
+}
+.like_header_a {
+  display: inline-block;
+  width: 150px;
+  height: 32px;
+  padding: 5px;
+  margin: 5px 0 10px;
+  font-size: 14px;
+  background-color: rgba(255,255,255,0);
+  color: #000;
+  text-align: center;
+  border: #000 1px solid;
+  text-decoration: none;  
+}
+.like_header_a:hover {
+  background-color: rgba(255,255,255,0.4);
+  cursor: pointer;
+}
+.review_left a {
+  color: #0000EE;
+  text-decoration: none;
+}
 
 
 /* ページャー */
@@ -732,6 +788,7 @@ input[type="submit"].search_btn:hover {
 .pager_nav_wrapper {
   padding-top: 20px;
   padding-bottom: 10px;
+  padding-right: 40px;
   display: flex;
   justify-content: flex-end;
 }

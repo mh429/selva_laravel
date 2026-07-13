@@ -43,7 +43,7 @@
     <form action="{{ route('admin.member.store') }}" method="POST">
       @csrf
       <div class="div_tac">
-        <input type="submit" value="登録完了" class="white_blue_submit">
+        <input type="submit" value="登録完了" class="white_blue_submit" onclick="this.disabled=true; this.form.submit();">
       </div>
     </form>
 
@@ -52,7 +52,7 @@
       @csrf
       @method('patch')
       <div class="div_tac">
-        <input type="submit" value="編集完了" class="white_blue_submit">
+        <input type="submit" value="編集完了" class="white_blue_submit" onclick="this.disabled=true; this.form.submit();">
       </div>
     </form>
     @endif

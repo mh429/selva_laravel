@@ -1,11 +1,15 @@
 <x-admin_layout>
-  <header style="width: 800px; height:100px; background-color: #D0CECE">
-    <h1>商品レビュー詳細</h1>
+<header  class="header_admin">
+  <h1>商品レビュー詳細</h1>
 
-    <div>
-      <a href="{{ session('admin_review_index_url', route('admin.review.index')) }}">一覧へ戻る</a>  
-    </div>
-  </header>
+  <div>
+    <a href="{{ session('admin_review_index_url', route('admin.review.index')) }}">一覧へ戻る</a>  
+  </div>
+</header>
+
+<div class="contents">
+
+  <div class="wrapper500">
 
     <div class="review_product_infomations">
       <div>
@@ -14,11 +18,11 @@
         @endif
       </div>
       <div>
-        <div>
+        <div class="review_total pb_20">
           <p>商品ID</p>
           <p>{{ $review->product->id }}</p>
         </div>
-        <h2 class="pb_20">{{ $review->product->name }}</h2>
+        <p class="pb_20">{{ $review->product->name }}</p>
         <div class="review_total">
           <p>総合評価</p>
           @if ($average)
@@ -35,29 +39,36 @@
       </div>
     </div>
 
-  <hr>
+    <hr>
 
-  <table>
-    <tr>
-      <th>ID</th>
-      <td>{{ $review->id }}</td>
-    </tr>
-    <tr>
-      <th>商品評価</th>
-      <td>{{ $review->evaluation }}</td>      
-    </tr>
-    <tr>
-      <th>商品コメント</th>
-      <td>{{ $review->comment }}</td>
-    </tr>
-  </table>
+    <table class="confirm_table">
+      <tr>
+        <th>ID</th>
+        <td>{{ $review->id }}</td>
+      </tr>
+      <tr>
+        <th>商品評価</th>
+        <td>{{ $review->evaluation }}</td>      
+      </tr>
+      <tr>
+        <th>商品コメント</th>
+        <td>{{ $review->comment }}</td>
+      </tr>
+    </table>
 
-  <a href="{{ route('admin.review.edit', $review->id) }}">編集</a>
+  </div>  
 
-  <form action="{{ route('admin.review.destroy', $review->id) }}" method="post">
-    @csrf
-    @method('delete')
-    <input type="submit" value="削除">
-  </form>
+  <div class="wrapper550">
+    <div class="admin_edit_delete_btn_wrapper">
+      <a href="{{ route('admin.review.edit', $review->id) }}" class="white_blue_btn">編集</a>
 
+      <form action="{{ route('admin.review.destroy', $review->id) }}" method="post">
+        @csrf
+        @method('delete')
+        <input type="submit" value="削除" class="white_blue_submit" onclick="this.disabled=true; this.form.submit();">
+      </form>
+    </div>
+  </div>
+
+</div>
 </x-admin_layout>
