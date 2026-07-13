@@ -106,13 +106,17 @@ for (let i = 1; i <= 4; i ++) {
       // CSRFトークン取得
       const token = document.querySelector('meta[name="csrf-token"]').content;
 
+      // ブレードからアップロード用のルート名を取得
+      const uploadUrl = document.getElementById('upload_url').value;
+
       // フォーム送信して返り値を受け取る
-      const response = await fetch('/product/upload', {
+      const response = await fetch(uploadUrl, {
         method: 'POST',
         headers: {
             'X-CSRF-TOKEN': token,
             'Accept': 'application/json',   // エラーメッセージ受取り
         },
+        credentials: 'same-origin',
         body: formData,
       });
       if (!response.ok) {

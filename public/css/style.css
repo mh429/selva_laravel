@@ -11,6 +11,13 @@
   margin: 50px auto;
   background-color: #FEF2CB;
 }
+.slot_wrapper_admin {
+  width: 800px;
+  min-height: 500px;
+  margin: 50px auto;
+  background-color: #DDEBF7;
+  position: relative;
+}
 .contents {
   padding: 20px;
 }
@@ -109,6 +116,21 @@ input[type="submit"].blue_submit {
 }
 input[type="submit"].blue_submit:hover {
   background-color: #254986;
+  cursor: pointer;
+}
+input[type="submit"].white_blue_submit {
+  width: 170px;
+  height: 36px;
+  padding: 5px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #2F5598;
+  text-align: center;
+  border: #2F5598 1px solid;
+  border-radius: 5px;
+}
+input[type="submit"].white_blue_submit:hover {
+  background-color: #e6e6e6;
   cursor: pointer;
 }
 input[type="submit"].submit_fit {
@@ -249,6 +271,26 @@ header input[type="submit"] {
 header input[type="submit"]:hover {
   background-color: rgba(255,255,255,0.4);
   cursor: pointer;
+}
+
+/* 管理者ヘッダー */
+.header_admin {
+  background-color: #D0CECE;
+}
+.header_admin h1 {
+  font-size: 18px;
+}
+.header_admin .header_left {
+  align-items: center;
+}
+/* 管理者フッター */
+.footer_admin {
+  width: 800px; 
+  height:100px;
+  background-color: #D0CECE;
+  position: absolute;
+  bottom: 0;
+
 }
 
 
@@ -542,6 +584,110 @@ input[type="submit"].search_btn:hover {
 }
 
 
+
+/* 管理者トップ画面 */
+.admin_top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* 管理者画面共通 */
+/* 検索テーブル */
+.admin_search_table {
+  width: 100%;
+  border: 2px solid #000;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-collapse: collapse;
+}
+.admin_search_table td,
+.admin_search_table th {
+  padding: 15px;
+  vertical-align: top;
+  border: 1px solid #000;
+}
+.admin_search_table th {
+  width: 150px;
+  font-weight: bold;
+  text-align: left;
+  background-color: #D9D9D9;
+}
+.admin_search_table td {
+  padding-left: 38px;
+}
+.admin_search_table_gender {
+  padding-right: 20px;
+}
+/* 情報テーブル */
+.admin_member_table {
+  width: 100%;
+  border: 2px solid #000;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.admin_member_table td,
+.admin_member_table th {
+  border: 1px dotted #000;
+}
+.admin_member_table th {
+  height: 22px;
+  padding: 2px;
+  font-weight: normal;
+  text-align: center;
+  background-color: #D9D9D9;
+  border-bottom: 1px solid #000;
+}
+.admin_member_table th a{
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+.admin_member_table td {
+  text-align: center;
+  padding: 2px;
+  background-color: #fff;
+}
+.admin_member_table td a{
+  color: #0000EE;
+  text-decoration: none;
+}
+.th_id {
+  width: 54px;
+}
+.th_member_name {
+  width: 127px;
+}
+.th_gender {
+  width: 45px;
+}
+.th_created_at {
+  width: 108px;
+}
+.th_edit_detail {
+  width: 46px;
+}
+.th_product_id {
+  width: 64px;
+}
+
+
+/* 会員管理 */
+.member_id_wrapper {
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: start;
+  gap: 46px;
+}
+.admin_edit_delete_btn_wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+}
 
 
 

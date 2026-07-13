@@ -40,6 +40,16 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+
+        // 管理者ログイン機能用に追記
+        // -------------------
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'administers',
+        ],
+        // -------------------
+
     ],
 
     /*
@@ -69,6 +79,17 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+
+
+        // 管理者ログイン機能用に追記
+        // 上のコメントアウトは元々でした
+        // -------------------
+        'administers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Administer::class,
+        ],
+        // -------------------
+
     ],
 
     /*
