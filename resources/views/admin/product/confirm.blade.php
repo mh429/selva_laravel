@@ -1,6 +1,6 @@
 <x-admin_layout>
 <header  class="header_admin">
-  <h1>{{ $mode === 'create' ? '商品登録' : '商品編集' }}</h1>
+  <h1>{{ $mode === 'create' ? '商品登録確認' : '商品編集確認' }}</h1>
 
   <div>
     <a href="{{ session('admin_product_index_url', route('admin.product.index')) }}">一覧へ戻る</a>  

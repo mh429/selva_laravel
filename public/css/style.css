@@ -80,6 +80,9 @@ h1 {
 .pb_40 {
   padding-bottom: 40px;
 }
+.pl_30 {
+  padding-left: 30px;
+}
 .bold {
   font-weight: bold;
 }
@@ -227,7 +230,6 @@ input[type="submit"].submit_fit {
   padding-right: 10px;
 }
 
-
 /* ヘッダー */
 header {
   width: 800px; 
@@ -338,7 +340,6 @@ header input[type="submit"]:hover {
   word-break: break-all;
 }
 
-
 /* ログイン */
 .pass_forget {
   text-decoration: none;
@@ -347,7 +348,6 @@ header input[type="submit"]:hover {
 .pass_forget_messages {
   padding-bottom: 30px;
 }
-
 
 /* 商品登録 */
 .file_button_none {
@@ -377,7 +377,6 @@ header input[type="submit"]:hover {
   font-size: 14px;
   padding: 5px 0 0 20px;
 }
-
 
 /* 商品一覧 */
 /* 検索フォーム */
@@ -469,7 +468,6 @@ input[type="submit"].search_btn:hover {
   align-items: end;
 }
 
-
 /* 商品詳細 */
 .product_titles_show {
   padding-top: 10px;
@@ -500,7 +498,6 @@ input[type="submit"].search_btn:hover {
   color: #0000EE;
 }
 
-
 /* レビューの商品画像（共通） */
 .review_product_infomations {
   padding: 10px;
@@ -508,7 +505,6 @@ input[type="submit"].search_btn:hover {
   display: flex;
   gap: 30px;
 }
-
 
 /* レビュー詳細 */
 .review_wrapper {
@@ -554,7 +550,6 @@ input[type="submit"].search_btn:hover {
   padding-bottom: 50px;
 }
 
-
 /* マイページ */
 .edit_email {
   padding-bottom: 15px;
@@ -586,7 +581,6 @@ input[type="submit"].search_btn:hover {
   background-color: #254986;
   cursor: pointer;
 }
-
 
 
 /* 管理者トップ画面 */
@@ -678,7 +672,6 @@ input[type="submit"].search_btn:hover {
   width: 64px;
 }
 
-
 /* 会員管理 */
 .member_id_wrapper {
   padding-bottom: 15px;
@@ -744,6 +737,10 @@ input[type="submit"].search_btn:hover {
 .review_left a {
   color: #0000EE;
   text-decoration: none;
+}
+.review_total_admin {
+  display: flex;
+  gap: 80px;
 }
 .preview_wrapper {
   position: relative;

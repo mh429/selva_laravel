@@ -79,11 +79,11 @@
           <td>{{ $review->id }}</td>
           <td>{{ $review->product_id }}</td>
           <td>{{ $review->evaluation }}</td>
-          <td>
+          <td><a href="{{ route('admin.review.show', $review->id) }}">
             {{ mb_strlen($review->comment) > 7
               ? mb_substr($review->comment, 0, 7) . '…'
               : $review->comment }}
-          </td>
+          </a></td>
           <td>{{ $review->created_at->format('Y/n/j') }}</td>
           <td><a href="{{ route('admin.review.edit', $review->id) }}">編集</a></td>
           <td><a href="{{ route('admin.review.show', $review->id) }}">詳細</a></td>        

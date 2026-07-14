@@ -75,7 +75,7 @@
         @foreach ($products as $product)
         <tr>
           <td>{{ $product->id }}</td>
-          <td>{{ $product->name }}</td>
+          <td><a href="{{ route('admin.product.show', $product->id) }}">{{ $product->name }}</a></td>
           <td>{{ $product->created_at->format('Y/n/j') }}</td>
           <td><a href="{{ route('admin.product.edit', $product->id) }}">編集</a></td>
           <td><a href="{{ route('admin.product.show', $product->id) }}">詳細</a></td>        

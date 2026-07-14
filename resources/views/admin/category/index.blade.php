@@ -75,7 +75,7 @@
         @foreach ($categories as $category)
         <tr>
           <td>{{ $category->id }}</td>
-          <td>{{ $category->name }}</td>
+          <td><a href="{{ route('admin.category.show', $category->id) }}">{{ $category->name }}</a></td>
           <td>{{ $category->created_at->format('Y/n/j') }}</td>
           <td><a href="{{ route('admin.category.edit', $category->id) }}">編集</a></td>
           <td><a href="{{ route('admin.category.show', $category->id) }}">詳細</a></td>        

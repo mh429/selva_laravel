@@ -80,6 +80,11 @@ class AdminProductController extends Controller
             'image_3' => ['nullable', 'string'],
             'image_4' => ['nullable', 'string'],
             'product_content' => ['required', 'string', 'max:500'],
+        ],
+        [],
+        [
+            'name' => '商品名',
+            'member_id' => '会員',
         ]);
 
         session()->put('admin.product.create', $data);
@@ -153,6 +158,11 @@ class AdminProductController extends Controller
             'image_3' => ['nullable', 'string'],
             'image_4' => ['nullable', 'string'],
             'product_content' => ['required', 'string', 'max:500'],
+        ],
+        [],
+        [
+            'name' => '商品名',
+            'member_id' => '会員',
         ]);
 
         session()->put("admin.product.edit.{$product->id}", $data);

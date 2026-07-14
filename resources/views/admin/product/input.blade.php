@@ -35,7 +35,7 @@
           <tr>
             <th>会員</th>
             <td>
-              <select name="member_id">
+              <select name="member_id" required>
                 <option value="">--選択してください--</option>
                 @foreach ($users as $user)
                   <option value="{{ $user->id }}" @selected(old('member_id', $product['member_id'] ?? '') == $user->id) required>
