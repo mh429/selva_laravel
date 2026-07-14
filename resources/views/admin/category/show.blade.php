@@ -24,15 +24,13 @@
         <th style="vertical-align: top;">商品小カテゴリ</th>
         <td>
           @foreach ($productCategory->subcategories as $subcategory)        
-            <p>{{ $subcategory->name }}</p>
+            <p class="pb_10">{{ $subcategory->name }}</p>
           @endforeach
         </td>
       </tr>
     </table>
 
-  </div>
 
-  <div class="wrapper500">
 
     <div class="admin_edit_delete_btn_wrapper pb_10">
       <a href="{{ route('admin.category.edit', $productCategory->id) }}" class="white_blue_btn">編集</a>
