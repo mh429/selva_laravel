@@ -10,7 +10,7 @@
 
   <div class="wrapper700">
     <div>
-      <p>{{ $product->category->name }} > {{ $product->subcategory->name }}</p>
+      <p>{{ $product->category->name ?? 'カテゴリなし' }} > {{ $product->subcategory->name ?? 'サブカテゴリなし' }}</p>
     </div>
     <div class="product_titles_show">
       <h2>{{ $product->name }}</h2>

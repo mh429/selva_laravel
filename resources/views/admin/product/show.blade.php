@@ -25,7 +25,7 @@
       </tr>
       <tr>
         <th>商品カテゴリ</th>
-        <td>{{ $product->category->name }}＞{{ $product->subcategory->name }}</td>
+        <td>{{ $product->category->name ?? 'カテゴリなし' }}＞{{ $product->subcategory->name ?? 'サブカテゴリなし' }}</td>
       </tr>
       <tr>
         <th style="vertical-align: top;">商品写真</th>

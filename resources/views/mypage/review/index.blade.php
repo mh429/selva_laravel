@@ -28,7 +28,7 @@
             @endif
           </div>
           <div>
-            <p class="pb_10"><span class="procudt_categories_index">{{ $review->product->category->name }}＞{{ $review->product->subcategory->name }}</span></p>
+            <p class="pb_10"><span class="procudt_categories_index">{{ $review->product->category->name ?? 'カテゴリなし' }}＞{{ $review->product->subcategory->name ?? 'サブカテゴリなし' }}</span></p>
             <h2 class="mypage_review_product_title  pb_10">{{ $review->product->name }}</h2>
             <div class="review_total">
               <div>
