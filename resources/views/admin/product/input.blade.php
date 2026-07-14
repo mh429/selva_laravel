@@ -100,7 +100,14 @@
             @for($i = 1; $i <= 4; $i++)
               <div>
                 <p>写真{{ $i }}</p>
-                <img id="preview{{ $i }}" style="display:none; max-width:200px;">          
+                <div class="preview_wrapper">
+                  <img id="preview{{ $i }}" style="display:none; width:200px;">
+                  <svg id="delete{{ $i }}" style="display:none" class="image_delete">
+                      <circle cx="12" cy="12" r="10" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+                      <line x1="8" y1="8" x2="16" y2="16" stroke="#000000" stroke-width="1.8" stroke-linecap="round"/>
+                      <line x1="16" y1="8" x2="8" y2="16" stroke="#000000" stroke-width="1.8" stroke-linecap="round"/>
+                  </svg>
+                </div>
                 <input type="file" id="image_input_{{ $i }}" name="image_input_{{ $i }}" accept=".jpg, .jpeg, .png, .gif" class="file_button_none" style="display: none;">
                 <label for="image_input_{{ $i }}" class="file_button">
                   アップロード

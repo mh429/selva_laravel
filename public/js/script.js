@@ -54,6 +54,7 @@ for (let i = 1; i <= 4; i ++) {
   const imageInput = document.getElementById(`image_input_${i}`);
   const imagePath = document.getElementById(`image_${i}`);
   const preview = document.getElementById(`preview${i}`);
+  const deletebtn = document.getElementById(`delete${i}`);
   const imageError = document.getElementById(`image_error${i}`);
 
   if (imageInput && imagePath && preview) {
@@ -62,7 +63,21 @@ for (let i = 1; i <= 4; i ++) {
 
       preview.src = imagePath.dataset.url;
       preview.style.display = 'block';
+      deletebtn.style.display = 'block';
     }
+
+    // 削除ボタンが押された時
+    deletebtn.addEventListener('click', function () {
+      // hiddenから削除（パスと表示用URLの両方）
+      imagePath.value = '';
+      imagePath.dataset.url = '';
+
+      // プレビュー非表示
+      preview.src = '';
+      preview.style.display = 'none';
+      deletebtn.style.display = 'none';
+    });
+
 
     // ファイルが選択されたらアップロードしてプレビュー表示
     imageInput.addEventListener('change', async function () {
@@ -139,6 +154,7 @@ for (let i = 1; i <= 4; i ++) {
       // プレビュー表示
       preview.src = data.url;
       preview.style.display = 'block';
+      deletebtn.style.display = 'block';
     });
   }
 }

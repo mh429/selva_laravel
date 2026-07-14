@@ -745,6 +745,18 @@ input[type="submit"].search_btn:hover {
   color: #0000EE;
   text-decoration: none;
 }
+.preview_wrapper {
+  position: relative;
+  display: inline-block;
+}
+.image_delete {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
 
 
 /* ページャー */
