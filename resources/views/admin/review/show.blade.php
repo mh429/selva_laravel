@@ -43,15 +43,15 @@
 
     <table class="confirm_table">
       <tr>
-        <th>ID</th>
+        <th class="confirm_table_bold">ID</th>
         <td>{{ $review->id }}</td>
       </tr>
       <tr>
-        <th>商品評価</th>
+        <th class="confirm_table_bold">商品評価</th>
         <td>{{ $review->evaluation }}</td>      
       </tr>
       <tr>
-        <th>商品コメント</th>
+        <th class="confirm_table_bold">商品コメント</th>
         <td>{{ $review->comment }}</td>
       </tr>
     </table>

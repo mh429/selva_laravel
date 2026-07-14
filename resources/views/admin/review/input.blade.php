@@ -21,11 +21,11 @@
 
       <div class="div_form_inputs">
 
-        <table class="confirm_table">
+        <table class="slim_table">
           <tr>
             <th>商品</th>
             <td>
-              <select name="product_id" class="input_250">
+              <select name="product_id" class="input_250" required>
                 <option value="">--選択してください--</option>
                 @foreach ($products as $product)
                   <option value="{{ $product->id }}" @selected(old('product_id', $review['product_id'] ?? '') == $product->id) required>
@@ -43,7 +43,7 @@
           <tr>
             <th>会員</th>
             <td>
-              <select name="member_id" class="input_250">
+              <select name="member_id" class="input_250" required>
                 <option value="">--選択してください--</option>
                 @foreach ($users as $user)
                   <option value="{{ $user->id }}" @selected(old('member_id', $review['member_id'] ?? '') == $user->id) required>
@@ -104,7 +104,7 @@
       </div>
 
       <div class="div_tac">
-        <input type="submit" value="確認画面へ" class="white_blue_submit">
+        <input type="submit" value="確認画面へ" class="blue_submit">
       </div>
 
     </form>

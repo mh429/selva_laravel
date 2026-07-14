@@ -17,10 +17,10 @@
 
     <div class="admin_top">
 
-      <a href="{{ route('admin.member.index') }}" class="white_blue_btn">会員一覧</a>
-      <a href="{{ route('admin.category.index') }}" class="white_blue_btn">商品カテゴリ一覧</a>
-      <a href="{{ route('admin.product.index') }}" class="white_blue_btn">商品一覧</a>
-      <a href="{{ route('admin.review.index') }}" class="white_blue_btn">商品レビュー一覧</a>
+      <a href="{{ route('admin.member.index') }}" class="white_blue_btn_main">会員一覧</a>
+      <a href="{{ route('admin.category.index') }}" class="white_blue_btn_main">商品カテゴリ一覧</a>
+      <a href="{{ route('admin.product.index') }}" class="white_blue_btn_main">商品一覧</a>
+      <a href="{{ route('admin.review.index') }}" class="white_blue_btn_main">商品レビュー一覧</a>
 
     </div>
 

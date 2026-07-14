@@ -22,11 +22,11 @@
           <p>商品ID</p>
           <p>{{ $product->id }}</p>
         </div>
-        <div class="review_total pb_20">
+        <div class="review_total pb_30">
           <p>会員</p>
           <p>{{ $user->name_sei }} {{ $user->name_mei }}</p>
         </div>
-        <p class="pb_20">{{ $product->name }}</p>
+        <p class="pb_30">{{ $product->name }}</p>
         <div class="review_total pb_20">
           <p>総合評価</p>
           @if ($average)
@@ -47,15 +47,15 @@
 
     <table class="confirm_table">
       <tr>
-        <th>ID</th>
+        <th class="confirm_table_bold">ID</th>
         <td>{{ $mode === 'create' ? '登録後に自動採番' : $review->id }}</td>
       </tr>
       <tr>
-        <th>商品評価</th>
+        <th class="confirm_table_bold">商品評価</th>
         <td>{{ $data['evaluation'] }}</td>
       </tr>
       <tr>
-        <th>商品コメント</th>
+        <th class="confirm_table_bold">商品コメント</th>
         <td>{{ $data['comment'] }}</td>
       </tr>
     </table>

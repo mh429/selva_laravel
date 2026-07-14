@@ -73,6 +73,12 @@ class AdminReviewController extends Controller
             'member_id' => ['required', 'integer', 'exists:members,id'],
             'evaluation' => ['required', 'integer', 'between:1,5'],
             'comment' => ['required', 'string', 'max:500',],
+        ],
+        [],
+        [
+            'product_id' => '商品',
+            'member_id' => '会員',
+            'comment' => '商品コメント',
         ]);
 
         session()->put('admin.review.create', $data);
@@ -136,6 +142,12 @@ class AdminReviewController extends Controller
             'member_id' => ['required', 'integer', 'exists:members,id'],
             'evaluation' => ['required', 'integer', 'between:1,5'],
             'comment' => ['required', 'string', 'max:500',],
+        ],
+        [],
+        [
+            'product_id' => '商品',
+            'member_id' => '会員',
+            'comment' => '商品コメント',
         ]);
 
         session()->put("admin.review.edit.{$review->id}", $data);

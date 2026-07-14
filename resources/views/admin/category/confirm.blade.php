@@ -25,7 +25,7 @@
         <td>
           @for ($i = 1; $i <= 10; $i++)
             @if ($data['subcategory'.$i])
-              <p>{{ $data['subcategory'.$i] }}<p>
+              <p class="pb_10">{{ $data['subcategory'.$i] }}<p>
             @endif
           @endfor
         </td>

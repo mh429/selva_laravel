@@ -77,11 +77,17 @@ h1 {
 .pb_20 {
   padding-bottom: 20px;
 }
+.pb_30 {
+  padding-bottom: 30px;
+}
 .pb_40 {
   padding-bottom: 40px;
 }
 .pl_30 {
   padding-left: 30px;
+}
+.fz_18 {
+  font-size: 18px;
 }
 .bold {
   font-weight: bold;
@@ -590,6 +596,25 @@ input[type="submit"].search_btn:hover {
   align-items: center;
   gap: 20px;
 }
+.white_blue_btn_main {
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #2F5598;
+  text-align: center;
+  border: #2F5598 1px solid;
+  border-radius: 5px;  
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.white_blue_btn_main:hover {
+  background-color: #e6e6e6;
+  cursor: pointer;
+}
 
 /* 管理者画面共通 */
 /* 検索テーブル */
@@ -755,6 +780,28 @@ input[type="submit"].search_btn:hover {
   height: 25px;
 }
 
+/* レビュー管理 */
+.slim_table {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.slim_table td,
+.slim_table th {
+  padding: 5px;
+  vertical-align: top;
+}
+.slim_table th {
+  width: 150px;
+  font-weight: normal;
+  text-align: left;
+}
+.slim_table td {
+  word-break: break-all;
+}
+th.confirm_table_bold {
+  font-weight: bold;
+}
 
 /* ページャー */
 .pager_prev_back,
