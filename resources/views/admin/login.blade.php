@@ -1,4 +1,3 @@
-
 <x-admin_layout>
 <header style="width: 800px; height:100px; background-color: #D0CECE">
 </header>
@@ -16,20 +15,23 @@
         <div>
           <label class="input_wrapper">
             <p>ログインID</p>
-            <input type="text" name="login_id" value="{{ old('login_id') }}" class="input_250">
+            <input type="text" name="login_id" value="{{ old('login_id') }}" required class="input_250">
           </label>
         </div>
         <div>
           <label class="input_wrapper">
             <p>パスワード</p>
-            <input type="text" name="password" class="input_250 mask">        
+            <input type="text" name="password" required class="input_250 mask">        
           </label>
         </div>
 
         <div class="error_wrapper">
-          @if($errors->any())
-            <p style="color: red">※{{ $errors->first() }}</p>
-          @endif      
+          @error('login_id')
+            <p>※{{ $message }}</p>
+          @enderror
+          @error('password')
+            <p>※{{ $message }}</p>
+          @enderror
         </div>
       </div>
 

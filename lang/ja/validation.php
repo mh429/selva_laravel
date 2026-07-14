@@ -171,5 +171,6 @@ return [
         'image_3' => '写真3',
         'image_4' => '写真4',
         'evaluation' => '商品評価',
+        'login_id' => 'ログインID',
     ],
 ];

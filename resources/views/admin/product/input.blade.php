@@ -45,7 +45,7 @@
               </select>
               <div class="error_wrapper_td">
                 @error('member_id')
-                  <p style="color:red">※{{ $message }}</p>
+                  <p>※{{ $message }}</p>
                 @enderror
               </div>                             
             </td>
@@ -56,7 +56,7 @@
               <input type="text" name="name" value="{{ old('name', $product['name'] ?? '') }}" required class="input_250">
               <div class="error_wrapper_td">
                 @error('name')
-                  <p style="color:red">※{{ $message }}</p>
+                  <p>※{{ $message }}</p>
                 @enderror
               </div>   
             </td>
@@ -80,10 +80,10 @@
               </div>     
               <div class="error_wrapper_td">
                 @error('product_category_id')
-                  <p>{{ $message }}</p>
+                  <p>※{{ $message }}</p>
                 @enderror
                 @error('product_subcategory_id')
-                  <p>{{ $message }}</p>
+                  <p>※{{ $message }}</p>
                 @enderror
               </div>    
             </td>
@@ -134,7 +134,7 @@
               <textarea name="product_content" class="text_250" required>{{ old('product_content', $product['product_content'] ?? '') }}</textarea>
               <div class="error_wrapper_td">
                 @error('product_content')
-                  <p style="color:red">※{{ $message }}</p>
+                  <p>※{{ $message }}</p>
                 @enderror
               </div>   
             </td>

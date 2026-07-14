@@ -11,7 +11,7 @@
 
   <div class="wrapper550">
 
-    <a href="{{ route('admin.category.create') }}" class="blue_btn">新規登録</a>
+    <a href="{{ route('admin.category.create') }}" class="blue_btn">商品カテゴリ登録</a>
 
     <div>
       <form action="" method="get">

@@ -19,12 +19,12 @@ class AdminLoginController extends Controller
     {
         $data = $request->validate(
             [
-                'login_id' => ['required',],
-                'password' => ['required',],
+                'login_id' => ['required', 'between:7,10', 'regex:/^[a-zA-Z0-9]+$/',],
+                'password' => ['required', 'between:8,20', 'regex:/^[a-zA-Z0-9]+$/',],
             ],
             [
-                'login_id.required' => 'IDもしくはパスワードが間違っています。',
-                'password.required' => 'IDもしくはパスワードが間違っています。',
+                'login_id.regex' => 'ログインIDは半角英数字で入力してください。',
+                'password.regex' => 'パスワードは半角英数字で入力してください。',
             ]
         );
 
@@ -36,7 +36,7 @@ class AdminLoginController extends Controller
         }
 
         return back()->withErrors([
-            'login_id' => 'IDもしくはパスワードが間違っています。'
+            'password' => 'IDもしくはパスワードが間違っています。'
         ])->onlyInput('login_id');
     }
 

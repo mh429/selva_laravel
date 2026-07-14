@@ -103,11 +103,10 @@ class AdminMemberController extends Controller
         if (!$data) {
             return redirect()->route('admin.member.create');
         }
+        session()->forget('admin.member.create');
 
         $data['password'] = bcrypt($data['password']);
         User::create($data);
-        
-        session()->forget('admin.member.create');
 
         return redirect(session('admin_member_index_url', route('admin.member.index')));
     }
@@ -136,6 +135,18 @@ class AdminMemberController extends Controller
 
     public function editConfirm(Request $request, User $user)
     {
+        // 半角スペース8つだと通ってしまう対策
+        if ($request->has('password')
+            && $request->input('password') !== null
+            && $request->input('password') !== ''
+            && trim($request->input('password')) === '') {
+            return back()
+                ->withErrors([
+                    'password' => 'パスワードは半角英数字で入力してください。',
+                ])
+                ->withInput();
+        }
+
         $data = $request->validate(
         [
             'name_sei' => ['required', 'string', 'max:20',],
@@ -152,6 +163,8 @@ class AdminMemberController extends Controller
         ]
         );
 
+        // dump($request->password);
+
         session()->put("admin.member.edit.{$user->id}", $data);
         $mode = 'edit';
 
@@ -164,6 +177,7 @@ class AdminMemberController extends Controller
         if (!$data) {
             return redirect()->route('admin.index');
         }
+        session()->forget("admin.member.edit.{$user->id}");
  
         if (empty($data['password'])) {
             unset($data['password']);
@@ -172,8 +186,6 @@ class AdminMemberController extends Controller
         }
 
         $user->update($data);
- 
-        session()->forget("admin.member.edit.{$user->id}");
  
         return redirect(session('admin_member_index_url', route('admin.member.index')));
     }

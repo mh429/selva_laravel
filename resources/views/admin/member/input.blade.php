@@ -45,10 +45,10 @@
         </div>
         <div class="error_wrapper">
           @error('name_sei')
-            <p style="color:red">※{{ $message }}</p>
+            <p>※{{ $message }}</p>
           @enderror
           @error('name_mei')
-            <p style="color:red">※{{ $message }}</p>
+            <p>※{{ $message }}</p>
           @enderror
         </div>
 
@@ -60,7 +60,7 @@
         </div>
         <div class="error_wrapper">
           @error('nickname')
-            <p style="color:red">※{{ $message }}</p>
+            <p>※{{ $message }}</p>
           @enderror
         </div>
 
@@ -75,7 +75,7 @@
         </div>
         <div class="error_wrapper">
           @error('gender')
-            <p style="color:red">※{{ $message }}</p>
+            <p>※{{ $message }}</p>
           @enderror
         </div>
 
@@ -94,10 +94,10 @@
         </div>
         <div class="error_wrapper">
           @error('password')
-            <p style="color:red">※{{ $message }}</p>
+            <p>※{{ $message }}</p>
           @enderror
           @error('password_confirmation')
-            <p style="color:red">※{{ $message }}</p>
+            <p>※{{ $message }}</p>
           @enderror
         </div>
 
@@ -109,7 +109,7 @@
         </div>
         <div class="error_wrapper">
           @error('email')
-            <p style="color:red">※{{ $message }}</p>
+            <p>※{{ $message }}</p>
           @enderror
         </div>
 
