@@ -44,6 +44,9 @@
           <tr>
             <th style="vertical-align: top;">商品小カテゴリ</th>
             <td>
+              @error('subcategory')
+                <p class="error_wrapper_td">※{{ $message }}</p>
+              @enderror                
               @for ($i = 1; $i <= 10; $i++)
                 <div>
                   <input type="text" name="subcategory{{ $i }}" value="{{ old('subcategory'.$i, $category['subcategory'.$i] ?? '') }}" class="input_250">
@@ -54,11 +57,7 @@
                   @enderror
                 </div>   
               @endfor
-              <div class="error_wrapper_td">
-                @error('subcategory')
-                  <p>※{{ $message }}</p>
-                @enderror                
-              </div>
+
             </td>
           </tr>
         </table>

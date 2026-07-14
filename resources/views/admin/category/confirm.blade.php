@@ -1,6 +1,6 @@
 <x-admin_layout>
 <header  class="header_admin">
-  <h1>{{ $mode === 'create' ? '商品カテゴリ登録' : '商品カテゴリ編集' }}</h1>
+  <h1>{{ $mode === 'create' ? '商品カテゴリ登録確認' : '商品カテゴリ編集確認' }}</h1>
 
   <div>
     <a href="{{ session('admin_category_index_url', route('admin.category.index')) }}">一覧へ戻る</a>  

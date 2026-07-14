@@ -70,7 +70,8 @@ Route::middleware('auth')->group(function () {
     ->name('product.create');
 
     // 画像用アップロード用のルート（Ajax）
-    Route::post('/product/upload', [ProductController::class, 'upload']);
+    Route::post('/product/upload', [ProductController::class, 'upload'])
+    ->name('product.upload');
 
     Route::post('product/confirm', [ProductController::class, 'confirm'])
     ->name('product.confirm');

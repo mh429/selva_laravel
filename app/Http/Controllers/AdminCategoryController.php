@@ -113,6 +113,7 @@ class AdminCategoryController extends Controller
         if (!$data) {
             return redirect()->route('admin.category.create');
         }
+        session()->forget('admin.category.create');
 
         // カテゴリ登録
         $category = ProductCategory::create([
@@ -128,8 +129,6 @@ class AdminCategoryController extends Controller
             }
         }
         
-        session()->forget('admin.category.create');
-
         return redirect(session('admin_category_index_url', route('admin.category.index')));
     }
 
@@ -211,6 +210,7 @@ class AdminCategoryController extends Controller
         if (!$data) {
             return redirect()->route('admin.index');
         }
+        session()->forget("admin.category.edit.{$productCategory->id}");
 
         // 念のためトランザクション化
         DB::transaction(function () use ($productCategory, $data) {
@@ -229,8 +229,6 @@ class AdminCategoryController extends Controller
                 }
             }       
         });
- 
-        session()->forget("admin.category.edit.{$productCategory->id}");
  
         return redirect(session('admin_category_index_url', route('admin.category.index')));
     }
